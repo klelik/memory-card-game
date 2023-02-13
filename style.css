@@ -7,6 +7,7 @@
 body{
     height: 100vh;
     background-color: blue;
+    color: white;
 }
 
 .memory-game{
@@ -53,4 +54,14 @@ transform: rotateX(180deg); /*rotate it so we can see tha backface*/
 img{
     width: 30px;
     height: 30px;
+}
+.score{
+    font-size: larger;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
 }

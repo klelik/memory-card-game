@@ -9,6 +9,32 @@
   </head>
   <body>
     <main>
+      <section
+        class="stats"
+        style="display: flex; flex-direction: column; justify-content: center"
+      >
+        <img
+          src="https://i2.wp.com/multarte.com.br/wp-content/uploads/2019/03/pokemon-png-logo.png?fit=2000%2C736&ssl=1"
+          style="width: 430px; height: 200px"
+          class="logo"
+        />
+
+        <div style="display: flex; margin-top: 30px; margin-left: 20px">
+          <img src="assets/score.png" class="stat-score" />
+          <span class="score"></span>
+        </div>
+        <!-- <div style="display:flex ;">
+                  <button id="minus"  onclick="changeNumOfCards('-')">-</button>
+                  <p>Num of Cards</p>
+                  <button id="plus" onclick="changeNumOfCards('+')">+</button>
+              </div>
+              <p>Total of Cards : <span class="numOfCards"></span></p> -->
+        <div style="display: flex; margin-left: 20px">
+          <img src="assets/turns.png" class="stat-score" />
+          <span class="turns"></span>
+        </div>
+      </section>
+
       <section>
         <div class="memory-game">
           <div class="memory-card">
@@ -120,29 +146,18 @@
             />
           </div>
         </div>
-
-        <section class="">
-          Score : <span class="score"></span>
-          <!-- <div style="display:flex ;">
-                <button id="minus"  onclick="changeNumOfCards('-')">-</button>
-                <p>Num of Cards</p>
-                <button id="plus" onclick="changeNumOfCards('+')">+</button>
-            </div>
-            <p>Total of Cards : <span class="numOfCards"></span></p> -->
-        </section>
-
-        <section class="">Turns : <span class="turns"></span></section>
-        <p>Total Score : <span class="totalScore"></span></p>
-
-        <div class="modal">
-          <div class="modal-content">
-            <span class="close-button">×</span>
-            <h1>CONGRATULATIONS YOU WON</h1>
-            <button class="again" onclick="reload()">Play again</button>
-          </div>
-        </div>
-
       </section>
+
+      <!-- modal -->
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close-button">×</span>
+          <h1>GREAT JOB TRAINER!</h1>
+          <img style="width: 190px; height: auto;" src="assets/win.gif" alt="win-img" />
+          <p>Total Score : <span class="totalScore"></span></p>
+          <button class="again" onclick="reload()">Play again</button>
+        </div>
+      </div>
     </main>
     <script src="script.js"></script>
   </body>

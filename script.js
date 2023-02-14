@@ -14,7 +14,7 @@ let lockBoard = false; //lock the board so we can not reveal 3rd card if not a m
 let firstCard, secondCard;
 let score = 0; //initiallize score and display score = 0;
 scoreDisplay.innerHTML = score;
-let turns = 0; //how many times player clicks
+let turns = 1; //how many times player clicks
 turnsDisplay.innerHTML = turns;
 let totalScore = 0;
 
@@ -76,13 +76,14 @@ function flipCard() {
 
 function checkMatch() {
   //check if cards match
-  turns++;
-  turnsDisplay.innerHTML = turns;
+
   if (firstCard.childNodes[1].alt === secondCard.childNodes[1].alt) {
     disableCards();
     checkWin();
   } else {
     //not a match
+    turns++;
+    turnsDisplay.innerHTML = turns;
     unflipCards();
   }
 }
@@ -92,9 +93,10 @@ function checkWin() {
     setTimeout(() => {
       // alert("You won")
       toggleModal();
+      scoreCount();
       setTimeout(() => {
         again.style.opacity = "1";
-      }, 400);
+      }, 700);
     }, 400);
   }
 }
@@ -128,9 +130,9 @@ function shuffle() {
 }
 
 function scoreCount() {
-  totalScore = (100 * score) / turns;
+  totalScore = ((100 * score) / turns).toFixed(2) + " / 600";
   totalScoreDisplay.innerHTML = totalScore;
-  alert("CONGRATULATION Your Score is ");
+  //   alert("CONGRATULATION Your Score is ");
 }
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
